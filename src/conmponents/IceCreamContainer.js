@@ -1,12 +1,12 @@
 import React from 'react'
-import { buyCake } from '../redux/index'
+import { buyIceCream } from '../redux/index'
 import { connect } from 'react-redux'
 
-function CakeContainer({ numberOfCakes,buyCake }){
+function CakeContainer({ numberOfIceCreams,buyIceCream }){
     return (
         <div>
-            <h2>Number of cakes  { numberOfCakes } </h2>
-            <button onClick = { buyCake } >Buy cake</button>
+            <h2>Number of IceCreams  { numberOfIceCreams } </h2>
+            <button onClick = { buyIceCream } >Buy Ice creams</button>
         </div>
     )
 }
@@ -20,12 +20,12 @@ function CakeContainer({ numberOfCakes,buyCake }){
 // }
 
 //se puede resumir asi cuando regrese una sola propiedad
-const mapStateToProps = state => ( {numberOfCakes:state.cake.numberOfCakes} )
-
+// se le agrego state.iceCream ya que en store.js se definio como iceCream a la propiedad que tendra esos reducers
+const mapStateToProps = state => ( {numberOfIceCreams:state.iceCream.numberOficeCreams} )
 //para utilizar nuestros actions
 const mapDispatchToProps = dispatch => {
     return {
-        buyCake: () => dispatch( buyCake() )
+        buyIceCream: () => dispatch( buyIceCream() )
     }
 }
 
