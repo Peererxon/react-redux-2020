@@ -1,5 +1,5 @@
 const initialState = {
-    numOfCakes : 10
+    numberOfCakes : 10
 }
 
 //inicializamos el estado conun vaor inicial
@@ -8,12 +8,11 @@ const cakeReducer = ( state = initialState,action ) => {
         case 'BUY_CAKE':
             return {
                 ...state, 
-                numOfCakes: state.numOfCakes - 1
+                numberOfCakes: state.numberOfCakes - 1
             }
     
         default:
             return state
-            break;
     }
 }
 
