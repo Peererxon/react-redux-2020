@@ -6,10 +6,15 @@ const initialState = {
 const cakeReducer = ( state = initialState,action ) => {
     switch (action.type) {
         case 'BUY_CAKE':
-            
-            break;
+            return {
+                ...state, 
+                numOfCakes: state.numOfCakes - 1
+            }
     
         default:
+            return state
             break;
     }
 }
+
+export default cakeReducer;
