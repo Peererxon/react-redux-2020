@@ -7,6 +7,7 @@ import store from './redux/store';
 import HookCakeContainer from './conmponents/HooksCakeContainer';
 import IceCreamContainer from './conmponents/IceCreamContainer';
 import NewCakeContainer from './conmponents/NewCakeContainer';
+import ItemContainer from './conmponents/ItemContainer';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     //el provider necesita ser cargado con un store con esto se comunica con toda la aplicacion al encapsularla en el provider
     <Provider store= {store}>
       <div className="App">
+        <ItemContainer/>
         <CakeContainer />
         <HookCakeContainer />
         <IceCreamContainer />
