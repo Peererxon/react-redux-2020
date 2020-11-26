@@ -3,13 +3,14 @@ import { buyCake } from '../redux/index'
 import { connect } from 'react-redux'
 
 function NewCakeContainer({ numberOfCakes,buyCake }){
-    const [number, setnumber] = useState();
+    const [number, setnumber] = useState(0);
     return (
         <div>
+            {/* Mostrando el numero de galletas o un mensaje de error si se acabaron */}
             { numberOfCakes > 0 ? <h2>Number of cakes  { numberOfCakes } </h2> : <h2>Cakes are sold!</h2> }
            
             <input type="text" name="numero" id="numero" value= {number} onChange = { (e) => setnumber(e.target.value) }  />
-    <button onClick = { () => buyCake(number) } > Buy { number } {(number < 2 && number >= -1)  ? 'cake' : 'cakes'} </button>
+            <button onClick = { () => buyCake(number) } > Buy { number } {(number < 2 && number >= -1 )  ? 'cake' : 'cakes'} </button>
         </div>
     )
 }
