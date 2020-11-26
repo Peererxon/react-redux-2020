@@ -3,6 +3,7 @@ import cakeReducer from './cake/cakeReducer';
 import iceCreamReducer from './iceCream/iceCreamReducer';
 import logger from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import userReducer from './user/userReducers';
 
 
 // se le pasa por parametro el reducer de nuestra aplicacion
@@ -12,7 +13,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 //se combinan los reducers y nombran atributos para cada reducer
 const rootReducer = combineReducers({
     cake: cakeReducer,
-    iceCream:iceCreamReducer
+    iceCream:iceCreamReducer,
+    user: userReducer
 })
 
 const store = createStore(rootReducer, 
